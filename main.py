@@ -1,6 +1,6 @@
 from crawler import extract_links, save_pdfs
 from pdf2json import walk_pdfs_and_convert
-from clustering import cluster_json_objects
+from clustering import cluster
 import glob
 import json
 
@@ -19,4 +19,4 @@ walk_pdfs_and_convert(pdf_list)
 with open("output.json") as f:
     json_objects = json.load(f)
 
-cluster_json_objects(json_objects)
+cluster(json_objects)
