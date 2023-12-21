@@ -34,7 +34,7 @@ def cluster(json_objects):
     features = vectorize_text(json_objects)
 
     # Perform clustering
-    n_clusters = 2  # Adjust as needed
+    n_clusters = 5  # Adjust as needed
     kmeans = KMeans(n_clusters=n_clusters)
     labels = kmeans.fit_predict(features)
 

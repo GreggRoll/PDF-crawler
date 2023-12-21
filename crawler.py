@@ -4,7 +4,10 @@ import json
 import os
 
 def extract_links(url):
-    """extract all pdf links for a given url and return a dict of the links"""
+    """extract all pdf links for a given url and return a dict of the links
+    
+    Keyword arguments:
+    url -- url to extract pdf links from)"""
 
     response = requests.get(url)
 
@@ -21,12 +24,17 @@ def extract_links(url):
 
     return links_dict
 
-def save_pdfs(url, links_dict):
-    """this function takes in links_dict and saves each pdf to pdfs folder"""
+def save_pdfs(url, links_dict, max_pdfs=10):
+    """this function takes in links_dict and saves each pdf to pdfs folder
+    
+    Keyword arguments:
+    url -- url to extract pdf links from
+    links_dict -- json file of file names and paths
+    max_pdfs -- (optional) helps limit saved pdfs for testing"""
     #add counter break for testing 10 files
     counter = 0
     for pdf in links_dict :
-        if counter >= 10 :
+        if counter >= max_pdfs :
             break
         pdf_path = links_dict[pdf]
         full_pdf_path = url+pdf_path
@@ -36,6 +44,6 @@ def save_pdfs(url, links_dict):
             pdf_file.write(pdf_request.content)
         counter += 1
 
-url = "https://irp.fas.org/doddir/army/"
-links_dict = extract_links(url)
-save_pdfs(url, links_dict)
+# url = "https://irp.fas.org/doddir/army/"
+# links_dict = extract_links(url)
+# save_pdfs(url, links_dict)
