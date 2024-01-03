@@ -9,7 +9,7 @@ url = "https://irp.fas.org/doddir/army/"
 links_dict = extract_links(url)
 
 #save the pdfs to pdfs folder
-save_pdfs(url, links_dict)
+save_pdfs(url, links_dict, max_pdfs=100)
 
 #glob pdfs and convert to json outputting to output.json
 pdf_list = glob.glob("pdfs/*")
