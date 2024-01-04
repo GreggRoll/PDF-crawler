@@ -1,0 +1,25 @@
+// File Hierarchy
+digraph {
+	rankdir=LR
+	node [color=lightblue2 fontname=Helvetica shape=box style=rounded]
+	edge [fontname=Helvetica]
+	"List of files" [label="List of files"]
+	"Narrative 1" [label="Narrative 1"]
+	"List of files" -> "Narrative 1" [label=20 penwidth=4.0]
+	Schema1 [label=Schema1]
+	"Narrative 1" -> Schema1 [label=10 penwidth=2.0]
+	Schema2 [label=Schema2]
+	"Narrative 1" -> Schema2 [label=10 penwidth=2.0]
+	"Narrative 2" [label="Narrative 2"]
+	"List of files" -> "Narrative 2" [label=30 penwidth=6.0]
+	Schema1 [label=Schema1]
+	"Narrative 2" -> Schema1 [label=10 penwidth=2.0]
+	Schema2 [label=Schema2]
+	"Narrative 2" -> Schema2 [label=20 penwidth=4.0]
+	"Narrative 3" [label="Narrative 3"]
+	"List of files" -> "Narrative 3" [label=40 penwidth=8.0]
+	Schema1 [label=Schema1]
+	"Narrative 3" -> Schema1 [label=30 penwidth=6.0]
+	Schema2 [label=Schema2]
+	"Narrative 3" -> Schema2 [label=10 penwidth=2.0]
+}
